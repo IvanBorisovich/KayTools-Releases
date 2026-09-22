@@ -189,9 +189,10 @@ export async function main() {
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  main().catch(() => {
+  main().catch(error => {
     // Fetch/crypto/CLI error messages can contain bearer URLs. Never print them.
-    console.error('Approved Preview transfer failed. No release was published. Check approved metadata, secret and URL expiry.');
+    const code = /^[A-Z_]{2,50}$/.test(error?.message ?? '') ? error.message : 'TRANSFER_ERROR';
+    console.error(`Approved Preview transfer failed (${code}). No release was published.`);
     process.exitCode = 1;
   });
 }
