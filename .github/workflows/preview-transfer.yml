@@ -1,0 +1,31 @@
+name: Import approved Preview assets into draft
+
+on:
+  push:
+    branches: [main]
+    paths: ['publish/preview-transfer.json']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: approved-preview-transfer
+  cancel-in-progress: false
+
+jobs:
+  import:
+    if: github.repository == 'IvanBorisovich/KayTools-Releases'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify and upload only approved assets (leave release draft)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          KAYTOOLS_PREVIEW_TRANSFER_KEY: ${{ secrets.KAYTOOLS_PREVIEW_TRANSFER_KEY }}
+        run: node publish/import-preview.mjs
