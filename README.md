@@ -8,20 +8,23 @@
 
 </div>
 
-## Установка KayTools 2.0.1
+## Установка KayTools 2.0.3
 
-Скачайте [**KayTools-2.0.1-win-x64-Setup.exe**](https://github.com/IvanBorisovich/KayTools-Releases/releases/download/suite-2.0.1-run39250502532-attempt1/KayTools-2.0.1-win-x64-Setup.exe)
+Скачайте [**KayTools-2.0.3-win-x64-Setup.exe**](https://github.com/IvanBorisovich/KayTools-Releases/releases/download/suite-2.0.3-run39256455596-attempt1/KayTools-2.0.3-win-x64-Setup.exe)
 и запустите в Windows x64. Установщик включает .NET; Visual Studio не требуется.
 
-**После Preview/RC или предыдущей сборки один раз установите этот новый setup:**
+**После Preview/RC один раз установите этот новый setup:**
 стабильный выпуск использует новый открытый ключ проверки обновлений.
+Если уже установлен KayTools 2.0.1 или новее, используйте раздел **«Обновления»** — повторная установка setup не нужна.
 Дальнейшие обновления и установка приложений доступны внутри KayTools.
 
-[Описание стабильного выпуска и все файлы](https://github.com/IvanBorisovich/KayTools-Releases/releases/tag/suite-2.0.1-run39250502532-attempt1).
+[Описание стабильного выпуска и все файлы](https://github.com/IvanBorisovich/KayTools-Releases/releases/tag/suite-2.0.3-run39256455596-attempt1).
 Автоматические проверки сборки, установки, безопасности, упаковки и интерфейса
 пройдены в Windows CI. Ручная проверка расширений во всех пяти браузерах ещё
 предстоит. Установщик пока без Authenticode-сертификата; подпись каталога обновлений
 проверяется отдельно встроенным в KayTools открытым ключом.
+
+В составе выпуска: **Kay Video Downloader 1.0.2**. Крестик отменяет активную загрузку, а завершённую, отменённую или ошибочную запись убирает из списка. Скачанные файлы остаются на диске. Исправлено открытие окна расширений и настроек.
 
 ## Приложения
 
